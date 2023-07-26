@@ -27,5 +27,28 @@ void main(List<String> arguments) {
       print('not grade');
   }
   //task2
-  
+  final String trackName = stdin.readLineSync()!;
+  final int yearsOfExperience = int.parse(stdin.readLineSync()!);
+  bool isFlutter = switch (trackName) {
+    'flutter' => true,
+    _ => false,
+  };
+  bool isBackend = switch (trackName) {
+    'backend' => true,
+    _ => false,
+  };
+
+  bool lessTwo = switch (yearsOfExperience) {
+    <= 2 => true,
+    _ => false,
+  };
+  bool lessFour = switch (yearsOfExperience) {
+    <= 4 => true,
+    _ => false,
+  };
+
+  if (isFlutter && lessTwo) print("bounus = 10%");
+  if (isFlutter && lessFour) print("bounus = 20%");
+  if (isBackend && lessTwo) print("bounus = 15%");
+  if (isBackend && lessTwo) print("bounus = 25%");
 }
